@@ -102,32 +102,36 @@ const PhotoList = ({ category }) => {
   ]);
 
   const currentPhotos = photos.filter((photo) => photo.category === category);
-//used in the modal
+  //used in the modal
   const [currentPhoto, setCurrentPhoto] = useState();
 
-//for render the modalonly is the user clicked
-const [isModalOpen, setIsModalOpen] = useState(false);
+  //for render the modalonly is the user clicked
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
 
-//take image info for show in modal
-const toggleModal = (image, i) => {
-  setCurrentPhoto({...image, index: i})
-  setIsModalOpen(true);
-}
+  //take image info for show in modal
+  const toggleModal = (image, i) => {
+    setCurrentPhoto({ ...image, index: i });
+    //control open the modal and close
+    setIsModalOpen(!isModalOpen);
+  }
+
 
 
   return (
     <div>
-      {isModalOpen && <Modal currentPhoto={currentPhoto} />}
+      {isModalOpen && (
+        <Modal currentPhoto={currentPhoto} onClose={toggleModal} />
+      )}
       <div className="flex-row">
         {currentPhotos.map((image, i) => (
-         <img
-         src={require(`../../assets/small/${category}/${i}.jpg`)}
-         alt={image.name}
-         className="img-thumbnail mx-1"
-         onClick={() => toggleModal(image, i)}
-         key={image.name}
-       />       
+          <img
+            src={require(`../../assets/small/${category}/${i}.jpg`)}
+            alt={image.name}
+            className="img-thumbnail mx-1"
+            onClick={() => toggleModal(image, i)}
+            key={image.name}
+          />
         ))}
       </div>
     </div>
