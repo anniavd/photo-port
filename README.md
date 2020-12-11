@@ -52,7 +52,8 @@ The license for which the application is covered:NONE
 
 - React
 - Node
-- JAVASCRIPT
+- Javascript
+- Test
 
 
 # Questions
