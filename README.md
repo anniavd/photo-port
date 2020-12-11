@@ -2,8 +2,8 @@
 
 ![License](https://img.shields.io/badge/License-NONE-grenn.svg)
   
-
-It is a personal application where photos of different categories are shown, as well as a digital portrait of the person to share them.
+# Description
+Photo Port is a personal application where photos of different categories are shown, as well as a digital portrait of the person to share them.
 
 
  ![home page](/src/assets/images/home-page.jpg)
